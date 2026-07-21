@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink: #16181C;
+  --ink-soft: #565C66;
+  --ink-faint: #9AA1AC;
+  --paper: #FFFFFF;
+  --panel: #F1F2F0;
+  --rule: #DCDEDB;
+  --brand: #FECC02;
+  --focus: #1C6BD9;
+  --display: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --body: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+
+.wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+/* ---- Viewfinder header ---------------------------------- */
+
+.finder {
+  position: relative;
+  margin: 3.5rem 0 4rem;
+  padding: 2.75rem 1.75rem;
+}
+
+.finder::before,
+.finder::after {
+  content: "";
+  position: absolute;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid var(--brand);
+}
+
+.finder::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.finder::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.75rem;
+}
+
+.finder h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.85rem, 6vw, 2.6rem);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.finder p {
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+}
+
+/* ---- Sections ------------------------------------------- */
+
+section { margin: 0 0 3.25rem; }
+
+h2 {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--brand);
+}
+
+h3 {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 2rem 0 0.5rem;
+}
+
+p { margin: 0 0 1rem; }
+
+ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+li { margin-bottom: 0.4rem; }
+
+a { color: var(--ink); text-decoration-color: var(--brand); text-underline-offset: 0.25em; text-decoration-thickness: 2px; }
+a:hover { color: var(--ink-soft); }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+strong { font-weight: 700; }
+
+/* ---- Panel / callout ------------------------------------ */
+
+.panel {
+  background: var(--panel);
+  padding: 1.5rem 1.5rem 0.75rem;
+  border-radius: 4px;
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  line-height: 2;
+}
+
+.meta span { display: inline-block; margin-right: 1.5rem; }
+
+/* ---- Feature list --------------------------------------- */
+
+.specs { list-style: none; margin: 0; padding: 0; }
+
+.specs li {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.5rem 1.25rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+.specs li:last-child { border-bottom: 1px solid var(--rule); }
+
+.specs dt, .specs .label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-top: 0.35em;
+}
+
+@media (max-width: 34rem) {
+  .specs li { grid-template-columns: 1fr; gap: 0.15rem; }
+}
+
+/* ---- Nav / footer --------------------------------------- */
+
+.nav {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 1.5rem 0 0;
+}
+
+.nav a { margin-right: 1.5rem; }
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+}
+
+footer a { margin-right: 1.25rem; }
